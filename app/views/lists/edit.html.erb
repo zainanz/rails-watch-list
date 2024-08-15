@@ -1,0 +1,4 @@
+<%= simple_form_for (@list) do |f| %>
+  <%= f.association :movies, collection: Movie.all, input_html: { class: 'multiselectuser'} %>
+  <%= f.submit %>
+<% end %>
