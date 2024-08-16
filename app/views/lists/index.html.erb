@@ -1,26 +1,48 @@
-<div class="" style="background-image: radial-gradient(#241f31 1%, black 95%);height: 100%">
+<div class="add-bottom-padding" style="background-image: radial-gradient(#241f31 1%, black 95%);">
   <div class="w-100 p-2 d-flex justify-content-end bg-black sticky-top">
     <%= link_to "Create List", new_list_path, class: "btn btn-info m-1 fw-bold lh-lg mx-2" %>
     <%= link_to "My List", root_path, class: "btn btn-info m-1 fw-bold lh-lg mx-4" %>
 
   </div>
-  <div class="card-categor rounded" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url(https://cdn.dribbble.com/userupload/12254505/file/original-8012c0bcfac68053bbd9f87b26278da1.png?resize=752x)">
+  <div class="main-banner rounded" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url(https://cdn.dribbble.com/userupload/12254505/file/original-8012c0bcfac68053bbd9f87b26278da1.png?resize=752x)">
     <h1 class="home-header">movies lists</h1>
   </div>
 
   <%if @lists.length == 0 %>
-    <div class="show-header text-center text-light" style="">You dont have a list yet!</div>
+    <div class="text-center text-light p-5 d-flex justify-content-center align-items-center flex-column" style="height:%">
+        <div>
+          <h2>You dont have a list yet!<h2>
+        </div>
+        <div class="add-div d-flex justify-content-center align-items-center bg-dark rounded" style="">
+          <%= link_to new_list_path do %>
+          <i class="show-icon fa-solid fa-plus icon-settings text-white"></i>
+          <%end %>
+          <i class="show-add icon-settings text-white"></i>
+        </div>
+    </div>
+
   <%else%>
-    <div class="p-5" style="">
-      <div class="cards">
+    <div class="p-5 d-flex flex-wrap justify-content-center" style="height:100%">
         <% @lists.each do |list|%>
-          <%= link_to list_path(list), class:"home-card" do %>
-            <div class="card-category m-2" style="background-image: url(https://i.pinimg.com/236x/84/1f/50/841f507da4e560ddb2743010e08f668f--cool-hand-luke-lemony-snicket.jpg)">
-              <h2 class="fw-bolder fs-1 "><%=list.name%></h2>
+          <%= link_to list_path(list) do%>
+            <div class="card-list m-5">
+              <div class="pic-div d-flex justify-content-center align-items-center bg-dark">
+                <% if list.photo.key.nil? %>
+                  <i class="fa-solid fa-play icon-settings text-white"></i>
+                <% else %>
+                  <%= cl_image_tag list.photo.key, class:"image-fit"%>
+                <% end %>
+              </div>
+              <%= link_to "", list_path(list), class:"card-delete-list fa-solid fa-trash text-danger", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+              <div class="card-list-infos bg-black">
+                <div class="text-white">
+                  <h2><%=list.name%></h2>
+                </div>
+                <%= link_to :edit, edit_list_path(list), class:"btn btn-primary"%>
+              </div>
             </div>
           <% end %>
         <%end%>
-      </div>
     </div>
   <%end%>
 </div>

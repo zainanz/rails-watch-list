@@ -1,1 +1,10 @@
-@import "home"
+@import "home";
+@import "link";
+// Helper to keep background black when empty
+
+html, body
+{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

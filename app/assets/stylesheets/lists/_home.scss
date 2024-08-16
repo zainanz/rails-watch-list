@@ -1,4 +1,7 @@
-.card-categor {
+.add-bottom-padding {
+  padding-bottom: 150px;
+}
+.main-banner {
   background-size: fit;
   background-position: center;
   height: 50vh;
@@ -22,76 +25,6 @@
   -webkit-text-stroke: 20px $cyan;
 }
 
-
-.card-category {
-  background-position: center;
-  background-size: cover;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 3px rgba(200,200,200,.5);
-}
-
-
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-
-
-
-.home-card {
-  text-decoration: none;
-}
-.home-card:hover {
-  transform: scale(1.01);
-}
-
-
-
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
 .fit-image {
   background-size: cover;
   background-position: 90% 35%;
@@ -100,7 +33,7 @@
 
 
 .show-header {
-  font-size: 100px;
+  font-size: 50px;
   letter-spacing: 30px;
   color: $cyan;
   font-weight: bolder;
@@ -109,4 +42,76 @@
 .comment-spacing {
   letter-spacing: 3px;
   font-size: 12px;
+}
+
+//add-div
+.add-div {
+  padding: 10px;
+  margin-top: 30px;
+  width: 300px;
+}
+
+.show-add { // to do <----------------------------------------------------------------------------------------
+  display: none;
+}
+.add-div:hover{
+  transform: scale(1.2);
+  border:5px solid white;
+}
+
+// cards
+
+.card-list {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.icon-settings {
+  font-size: 150px;
+}
+
+.card-list h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-list p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-list .card-list-infos {
+  width: 300px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10px;
+}
+
+
+.card-list .card-delete-list {
+  visibility: hidden;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  z-index: 10;
+}
+
+.card-list:hover .card-delete-list{
+  visibility:visible;
+}
+
+.pic-div {
+  height: 200px;
+  width: 300px;
+}
+.image-fit{
+  height: 100%;
+  width: 100%;
 }

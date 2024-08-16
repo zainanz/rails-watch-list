@@ -22,6 +22,7 @@ gem "bootstrap", "~> 5.2"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form"
+gem "cloudinary"
 gem "sassc-rails"
 gem "dotenv-rails"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]

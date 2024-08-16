@@ -12,12 +12,17 @@
   <div class="py-5"><h1 class="text-center show-header"><%= @list.name%></h1></div>
     <div class="d-flex justify-content-evenly flex-wrap p-5">
       <%if @bookmarks.length == 0%>
-        <div class="text-white fs-3 fst-italics"> No bookmarks </div>
-        <div class="card bg-secondary" style="width: 18rem;">
-            <div class="card-body">
-              <%= image_tag "https://cdn4.iconfinder.com/data/icons/vectory-bonus-3/40/button_add-512.png" %>
-            </div>
-          </div>
+        <div class="text-center text-light p-5 d-flex justify-content-center align-items-center flex-column" style="height:%">
+        <div>
+          <h2>Add a bookmark<h2>
+        </div>
+        <div class="add-div d-flex justify-content-center align-items-center bg-dark rounded" style="">
+          <%= link_to new_list_bookmark_path(@list) do %>
+          <i class="show-icon fa-solid fa-plus icon-settings text-white"></i>
+          <%end %>
+          <i class="show-add icon-settings text-white"></i>
+        </div>
+        </div>
       <%else%>
         <%@bookmarks.each do |bookmark|%>
           <div class="card bg-light m-3" style="width: 25rem;">
