@@ -2,29 +2,30 @@
   background-size: fit;
   background-position: center;
   height: 50vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,1);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 
 .home-header {
+  color: $cyan;
   font-size: 250px;
   font-weight: bolder;
-  letter-spacing: 5px;
-  box-shadow: 1, 4, 1, rgb(255,255,255);
+  letter-spacing: 30px;
+  -webkit-text-stroke: 20px $cyan;
 }
 
 
 .card-category {
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   height: 180px;
   display: flex;
   justify-content: center;
@@ -34,7 +35,7 @@
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 3px rgba(200,200,200,.5);
 }
 
 
@@ -93,19 +94,19 @@
 }
 .fit-image {
   background-size: cover;
-  background-position: center;
+  background-position: 90% 35%;
   box-shadow: 3px 3px 5px gray;
 }
 
 
 .show-header {
-  font-size: 50px;
-  letter-spacing: 4px;
+  font-size: 100px;
+  letter-spacing: 30px;
+  color: $cyan;
+  font-weight: bolder;
 }
 
-
-.fly-button {
-  position: fixed;
-  right: 5%;
-  bottom: 50%;
+.comment-spacing {
+  letter-spacing: 3px;
+  font-size: 12px;
 }
